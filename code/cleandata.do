@@ -43,11 +43,19 @@ rename _merge merge_census_restaurant
 merge 1:1 schoolcode using "temp/SchoolData.dta"
 rename _merge merge_final
 
+
+
+
+*** Labels ***
+
+label variable ffood "fast food restaurant availability"
+label variable afood "any restaurant availability"
+label define ffood_label 1 "fast food restaurant within 0.1 miles"	2 "fast food restaurant 0.10-0.25 miles"	3 "fast food restaurant 0.25-0.50 miles"
+label define afood_label 1 "any restaurant within 0.1 miles"		2 "any restaurant 0.10-0.25 miles"			3 "any restaurant 0.25-0.50 miles"
+label values ffood ffood_label
+label values afood afood_label
+
 save "derived/obesitydata.dta", replace
-
-
-
-
 
 
 
