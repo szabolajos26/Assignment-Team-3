@@ -10,7 +10,7 @@
 cap mkdir temp
 cap mkdir derived
 
-forval i = 1999/2007 {
+forvalues i = 1999/2007 {
 use "raw/SchoolData`i'.dta", clear
 merge 1:1 schoolcode using "raw/SchoolCensusData`i'.dta", generate(merge_census)
 if `i'!=2000 {
@@ -33,8 +33,12 @@ save "temp/merged_`i'.dta", replace
 
 
 
-
-*save "derived/obesitydata.dta", replace
+*** 3. Create panel ***
+use "temp/merged_1999.dta", clear
+forvalues i = 2000/2007 {
+append using "temp/merged_`i'.dta"
+}
+save "derived/obesitydata.dta", replace
 
 
 
