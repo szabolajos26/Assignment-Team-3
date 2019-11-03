@@ -4,58 +4,39 @@
 * run this code from obesity/data
 
 
-*** Merge datasets ***
+*** 1. Merge datasets within year ***
 
 * create temp and derived folder if they don't exist
 cap mkdir temp
 cap mkdir derived
 
-* School data
-use "raw/SchoolData1999.dta", clear
-forval i = 2000/2007 {
-	merge 1:1 schoolcode using "raw/SchoolData`i'.dta"
-	rename _merge merge_school_`i'
-}
-save "temp/SchoolData.dta", replace
-
-* Restaurant data
-use "raw/RestaurantData1999", clear
-forval i = 2001/2007 {
-	merge 1:1 schoolcode using "raw/RestaurantData`i'.dta"
-	rename _merge merge_restaurant_`i'
-}
-save "temp/RestaurantData.dta", replace
-
-* School census
-use "raw/SchoolCensusData1999.dta", clear
-forval i = 2000/2007 {
-	merge 1:1 schoolcode using "raw/SchoolCensusData`i'.dta"
-	rename _merge merge_census_`i'
-}
-save "temp/SchoolCensusData.dta", replace
+forval i = 1999/2007 {
+use "raw/SchoolData`i'.dta", clear
+merge 1:1 schoolcode using "raw/SchoolCensusData`i'.dta", generate(merge_census)
+if `i'!=2000 {
+merge 1:1 schoolcode using "raw/RestaurantData`i'.dta", generate(merge_restaurant)
 
 
 
-* Merge the 3 datasets
-	/* Note: schoolcode is unique each year so we can merge only on schoolcode */
-merge 1:1 schoolcode using "temp/RestaurantData.dta"
-rename _merge merge_census_restaurant
-merge 1:1 schoolcode using "temp/SchoolData.dta"
-rename _merge merge_final
-
-
-
-
-*** Labels ***
-
+*** 2. Labels ***
 label variable ffood "fast food restaurant availability"
 label variable afood "any restaurant availability"
 label define ffood_label 1 "fast food restaurant within 0.1 miles"	2 "fast food restaurant 0.10-0.25 miles"	3 "fast food restaurant 0.25-0.50 miles"
 label define afood_label 1 "any restaurant within 0.1 miles"		2 "any restaurant 0.10-0.25 miles"			3 "any restaurant 0.25-0.50 miles"
-label values ffood ffood_label
-label values afood afood_label
+foreach var of varlist ffood afood {
+destring `var', replace
+label values `var' `var'_label
+}
+}
+save "temp/merged_`i'.dta", replace
+}
 
-save "derived/obesitydata.dta", replace
+
+
+
+*save "derived/obesitydata.dta", replace
+
+
 
 
 
