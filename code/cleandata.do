@@ -6,6 +6,10 @@
 
 *** Merge datasets ***
 
+* create temp and derived folder if they don't exist
+cap mkdir temp
+cap mkdir derived
+
 * School data
 use "raw/SchoolData1999.dta", clear
 forval i = 2000/2007 {
