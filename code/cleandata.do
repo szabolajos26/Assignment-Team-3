@@ -1,8 +1,6 @@
 *Data from here:
 *https://www.dropbox.com/sh/53tn729we5u8nwr/AACnifmIxqPo-_TcPP5vSP-Sa?dl=0
 
-* run this code from obesity/
-
 
 *** 1. Merge datasets within year ***
 
