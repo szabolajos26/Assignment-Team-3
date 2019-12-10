@@ -1,0 +1,40 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{3}{c}}
+\hline\hline
+                    &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}\\
+                    &\multicolumn{1}{c}{Percent obese students}&\multicolumn{1}{c}{Percent obese students}&\multicolumn{1}{c}{Percent obese students}\\
+\hline
+Availability of fast food restaurant within 0.1 miles&      3.0807\sym{*}  &      1.7405\sym{*}  &      6.1955\sym{**} \\
+                    &    (1.6072)         &    (0.9015)         &    (2.9446)         \\
+[1em]
+Availability of any restaurant within 0.1 miles&      0.6817         &     -0.6683         &      1.0939         \\
+                    &    (1.0308)         &    (0.5683)         &    (1.9123)         \\
+[1em]
+Availability of fast food restaurant within 0.25 miles&     -2.4859\sym{**} &     -0.9088\sym{*}  &     -1.8486         \\
+                    &    (1.1112)         &    (0.5512)         &    (1.1812)         \\
+[1em]
+Availability of any restaurant within 0.25 miles&      2.1416\sym{**} &      0.1111         &      0.2690         \\
+                    &    (0.8757)         &    (0.4883)         &    (1.0113)         \\
+[1em]
+Availability of fast food restaurant within 0.5 miles&      1.3903\sym{*}  &    -0.02336         &     -0.9173         \\
+                    &    (0.8219)         &    (0.4550)         &    (1.1152)         \\
+[1em]
+Availability of any restaurant within 0.50 miles&      1.2266         &      0.5181         &      0.1266         \\
+                    &    (0.8407)         &    (0.4928)         &    (0.9083)         \\
+[1em]
+Constant            &      29.640\sym{***}&      20.112\sym{**} &      32.264\sym{***}\\
+                    &    (0.5659)         &    (8.9209)         &    (0.9295)         \\
+\hline
+School Fixed Effects&          no         &          no         &         yes         \\
+Year fixed effects  &          no         &         yes         &          no         \\
+School controls     &          no         &         yes         &          no         \\
+Census block controls&          no         &         yes         &          no         \\
+Implied cumulative effect of exposure to fast food restaurant within 0.1 miles&      1.9852         &      0.8083         &      3.4296         \\
+N                   &        8373         &        8373         &        8373         \\
+R-squared           &     0.02087         &      0.4260         &      0.6360         \\
+\hline\hline
+\multicolumn{4}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{4}{l}{\footnotesize \sym{*} \(p<.10\), \sym{**} \(p<.05\), \sym{***} \(p<.01\)}\\
+\end{tabular}
+}
