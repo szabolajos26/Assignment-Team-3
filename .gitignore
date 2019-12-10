@@ -1,5 +1,4 @@
 data/
-output/
-*.aux
-*.log
-*.synctex.gz
+output/*.aux
+output/*.log
+output/*.synctex.gz
