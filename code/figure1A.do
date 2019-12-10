@@ -2,10 +2,11 @@
 
 *cd "C:\Irattár\ceu\2019ősz\Empirical_Research\obesity\data\derived"
 
-use "finaldata.dta"
+*use "finaldata.dta"
 
 use "data/derived/obesitydata.dta", clear
 cap mkdir "output/tables"
+cap mkdir "output/figures"
 
 * Generate availability of restaurants variables 
 foreach var in ffood afood {
@@ -35,14 +36,14 @@ quietly eststo Equation2: reg fit9Obes ffood_01 afood_01 ffood_25 afood_25  ffoo
  coefplot Equation1 Equation2, drop( afood_01 afood_25   afood_50  _cons `schoolvar' `blockvar') ///
   coeflabels(ffood_01="0.1" ffood_25="0.25" ffood_50="0.5") vertical  msymbol(d) mfcolor(white) levels(99.9 99 95)  ///
 xtitle(Distance from fast food restaurant (in miles)) ytitle(Estimated change in % obesity among ninth graders) recast(connected) 
-graph export figure1A.png, replace
+graph export "output/figures/figure1A.png", replace
 
  
 coefplot (Equation1, drop(afood_01 afood_25   afood_50  _cons)) ///
 (Equation2, drop( afood_01 afood_25   afood_50  _cons `schoolvar' `blockvar')), ///
   coeflabels(ffood_01="0.1" ffood_25="0.25" ffood_50="0.5") vertical ///
 xtitle(Distance from fast food restaurant (in miles)) ytitle(Estimated change in % obesity among ninth graders) recast(connected)
-graph export figure1A_b.png, replace
+graph export "output/figures/figure1A_b.png", replace
 
 
 /*
