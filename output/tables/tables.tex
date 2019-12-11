@@ -1,0 +1,40 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[document]{ragged2e}
+\usepackage[english]{babel}
+\usepackage{graphics}
+\usepackage[a3paper]{geometry}
+\usepackage{float}
+
+\title{junk}
+\author{Drucker, Juhász \& Szabó}
+\date{December 2019}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+
+\begin{table}[h]
+\caption{Summary Statistics for California School Data}
+\input{table1a}
+\end{table}
+
+\newpage
+
+\begin{table}[h]
+\caption{Impact of Fast Food on Obesity in Schools: Benchmark Results}
+\input{table2}
+\end{table}
+
+\newpage
+
+\begin{figure}[b]
+\caption{Impact of Fast Food Availability on Obesity among Ninth Graders}
+\includegraphics[scale=1]{../figures/figure1A.png}
+\end{figure}
+
+
+
+\end{document}
