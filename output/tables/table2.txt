@@ -1,0 +1,112 @@
+		(1)	(2)	(3)
+VARIABLES	LABELS	Percent obese students	Percent obese students	Percent obese students
+				
+ffood_01	Availability of fast food restaurant within 0.1 miles	3.0807*	1.7405*	6.1955**
+		(1.6072)	(0.9015)	(2.9446)
+afood_01	Availability of any restaurant within 0.1 miles	0.6817	-0.6683	1.0939
+		(1.0308)	(0.5683)	(1.9123)
+ffood_25	Availability of fast food restaurant within 0.25 miles	-2.4859**	-0.9088*	-1.8486
+		(1.1112)	(0.5512)	(1.1812)
+afood_25	Availability of any restaurant within 0.25 miles	2.1416**	0.1111	0.2690
+		(0.8757)	(0.4883)	(1.0113)
+ffood_50	Availability of fast food restaurant within 0.5 miles	1.3903*	-0.0234	-0.9173
+		(0.8219)	(0.4550)	(1.1152)
+afood_50	Availability of any restaurant within 0.50 miles	1.2266	0.5181	0.1266
+		(0.8407)	(0.4928)	(0.9083)
+2001.year	Year = 2001		0.0832	
+			(0.5924)	
+2002.year	Year = 2002		4.0011***	
+			(0.6742)	
+2003.year	Year = 2003		1.9222***	
+			(0.6224)	
+2004.year	Year = 2004		2.0194***	
+			(0.6267)	
+2005.year	Year = 2005		2.3704***	
+			(0.6289)	
+2006.year	Year = 2006		0.8900	
+			(0.6151)	
+2007.year	Year = 2007		-0.4763	
+			(0.5919)	
+rttitlei	School qualified for title 1 funding		0.3808	
+			(0.4076)	
+rtnostud	Number of students		-0.0004*	
+			(0.0002)	
+rtpupiltc	Student teacher ratio		0.3708**	
+			(0.1477)	
+rtblack	Share black students		16.2791***	
+			(2.6479)	
+rtasian	Share asian students		-2.8483	
+			(2.4764)	
+rthispanic	Share hispanic students		7.6153***	
+			(1.8010)	
+rtindian	Share native american students		9.0949	
+			(7.4315)	
+rtmigrant	Share immigrant students		1.0347	
+			(2.4076)	
+rtfemale	Share female students		6.4793	
+			(5.4796)	
+rtfreelcelig	Share eligible for free lunch		1.1494	
+			(1.3256)	
+rtreducedlc	Share eligible for subsidised lunch		-2.2600	
+			(4.1310)	
+rtfteteachers	FTE teachers per student		80.3374**	
+			(37.9914)	
+rttestsc9	Average test scores for 9th grade		-0.1945***	
+			(0.0181)	
+rtdmtestsc9	Test score information missing		-7.7858**	
+			(3.0849)	
+medhhinc	Median household income in 1999		0.0000	
+			(0.0000)	
+medearn	Median earnings in 1999 for popn >=16 with earnings		0.0000	
+			(0.0000)	
+avghhsize	Average household size for all occupied housing units		-0.4895	
+			(0.5432)	
+medcontrent	Median contract rent (dollars) for specified renter occupied housing		-0.0034	
+			(0.0027)	
+medgrossrent	Median gross rent (dollars) for specified renter occupied housing		0.0024	
+			(0.0025)	
+medvalue	Median Value for all Owner Occupied Housing Units		-0.0000	
+			(0.0000)	
+pctwhite	Percent of the population that is white		0.1923	
+			(2.1356)	
+pctasian	Percent of the population that is asian		2.8153	
+			(2.6672)	
+pctmale	Percent of the population that is male		-8.3816	
+			(5.6393)	
+pctnevermarried	Percent of the population 15+ never married		19.1633**	
+			(7.5275)	
+pctmarried	Percent of the population 15+ married (spouse present or absent)		12.9962*	
+			(7.4448)	
+pctdivorced	Percent of the population divorced		14.9780	
+			(9.3197)	
+pctHSdiponly	Percent of popn 25+ with just a high school diploma		-1.0443	
+			(3.3718)	
+pctsomecollege	Percent of popn 25+ with some college, no degree		-0.9456	
+			(3.6509)	
+pctassociate	Percent of popn 25+ with Associate's degree		-3.5053	
+			(5.8424)	
+pctbachelors	Percent of popn 25+ with Bachelor's degree		-6.3782	
+			(4.0218)	
+pctgraddegree	Percent of popn 25+ with Graduate degree		-1.7003	
+			(5.0721)	
+pctinlaborforce	Percent of popn 16+ in labor force		-3.4778	
+			(2.9902)	
+pctunemployed	Percent of popn 16+ in labor force that is unemployed		-10.7063***	
+			(3.6864)	
+pctincunder10k	Percent of households with income under 10k		-2.1575	
+			(4.4153)	
+pctincover200k	Percent of households with income over 200k		-5.5000	
+			(6.3555)	
+pcthhwithwages	Percent of households with wage or salary income		-2.3688	
+			(3.2952)	
+pctoccupied	Percent of housing units occupied		1.0989	
+			(2.7132)	
+pcturban	Percent of housing units considered urban		0.4800	
+			(0.9826)	
+Constant	Constant	29.6398***	20.1125**	32.2644***
+		(0.5659)	(8.9209)	(0.9295)
+				
+Observations		8,373	8,373	8,373
+R-squared		0.0209	0.4260	0.6360
+Robust standard errors in parentheses				
+*** p<0.01, ** p<0.05, * p<0.1				

@@ -34,33 +34,37 @@ estadd local schoolfe "no"
 estadd local yearfe "no"
 estadd local schoolvars "no"
 estadd local blockvars "no"
-estadd scalar cumulative = _b[ffood_01] + _b[ffood_25] + _b[ffood_50]
-estadd local secumulative ""
+lincom ffood_01 + ffood_25 + ffood_50
+estadd local cumulative = round(r(estimate), 0.0001)
+estadd local secumulative = round(r(se), 0.0001)
 
 eststo: reg fit9Obes ffood_01 afood_01 ffood_25 afood_25 ffood_50 afood_50 i.year `schoolvars' `blockvars' `schooldistvars' [aw=no9Obes], cluster(schoolcode)
 estadd local schoolfe "no"
 estadd local yearfe "yes"
 estadd local schoolvars "yes"
 estadd local blockvars "yes"
-estadd scalar cumulative = _b[ffood_01] + _b[ffood_25] + _b[ffood_50]
-estadd local secumulative ""
+lincom ffood_01 + ffood_25 + ffood_50
+estadd local cumulative = round(r(estimate), 0.0001)
+estadd local secumulative = round(r(se), 0.0001)
 
 eststo: areg fit9Obes ffood_01 afood_01 ffood_25 afood_25 ffood_50 afood_50 [aw=no9Obes], cluster(schoolcode) a(schoolcode)
 estadd local schoolfe "yes"
 estadd local yearfe "no"
 estadd local schoolvars "no"
 estadd local blockvars "no"
-estadd scalar cumulative = _b[ffood_01] + _b[ffood_25] + _b[ffood_50]
-estadd local secumulative ""
+lincom ffood_01 + ffood_25 + ffood_50
+estadd local cumulative = round(r(estimate), 0.0001)
+estadd local secumulative = round(r(se), 0.0001)
 
 eststo: areg fit9Obes ffood_01 afood_01 ffood_25 afood_25 ffood_50 afood_50 i.year `schoolvars' `blockvars' `schooldistvars' [aw=no9Obes], cluster(schoolcode) a(schoolcode)
 estadd local schoolfe "yes"
 estadd local yearfe "yes"
 estadd local schoolvars "yes"
 estadd local blockvars "yes"
-estadd scalar cumulative = _b[ffood_01] + _b[ffood_25] + _b[ffood_50]
-estadd local secumulative ""
+lincom ffood_01 + ffood_25 + ffood_50
+estadd local cumulative = round(r(estimate), 0.0001)
+estadd local secumulative = round(r(se), 0.0001)
 
-esttab using "output/tables/table2.tex", replace label wrap compress nodepvars title("Percent of ninth graders that are obese") s(schoolfe yearfe schoolvars blockvars cumulative secumulative N r2, label("School Fixed Effects" "Year fixed effects" "School controls" "Census block controls" "Implied cumulative effect of exposure" "to fast food restaurant within 0.1 miles" "N" "R-squared")) ar2 se noconstant star(* .10 ** .05 *** .01) b(a4) drop(*year `schoolvars' `blockvars' `schooldistvars') width(1\linewidth)
+esttab using "output/tables/table2.tex", replace label wrap compress nodepvars  s(schoolfe yearfe schoolvars blockvars cumulative secumulative N r2, label("School Fixed Effects" "Year fixed effects" "School controls" "Census block controls" "Implied cumulative effect of exposure" "to fast food restaurant within 0.1 miles" "N" "R-squared")) ar2 se noconstant star(* .10 ** .05 *** .01) b(a4) drop(*year `schoolvars' `blockvars' `schooldistvars') width(1\linewidth) mtitle("pct obese" "pct obese" "pct obese" "pct obese")
 
 
